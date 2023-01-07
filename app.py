@@ -9,18 +9,27 @@ blob = TextBlob(text)
 
 #defines sentiment polarity. If the sentence is "positive" a positive message appears
 #if the message is negative it will inform you the message is not positive
-def sentimentAnalysis():
-    if (blob.sentiment[0] < .5):
-        return("im sorry, that doesn't sound great.")
+def polarity_Analysis():
+    if (blob.sentiment[0] < .15):
+        return("Negative")
+    elif (blob.sentiment[0] < .5):
+        return("Less positive")
     else :
-        return("That sounds great!")
+        return("Positive!")
+
+def objectivity_analysis():
+    if blob.sentiment[1] < .5:
+        return("\nThis may be an objective")
+    else:
+        return("\nThis is most likely subjective/opinion based")
 
 
 
 
 
-#print(f" \n the following are tags: \n {blob.tags}")    # prints part of speech tags
-#print(f" \n the following are noun phrases: \n{blob.noun_phrases}")    #noun phrases 
-#print(f" \n the following shows the polarity and sentiment: \n {blob.sentiment}")   # "The subjectivity is a float within the range [0.0, 1.0] where 0.0 is very objective and 1.0 is very subjective."
+#print(f"\nThe following are tags: \n {blob.tags}")    # prints part of speech tags
+#print(f"\nThe following are noun phrases: \n{blob.noun_phrases}")    #noun phrases 
+print(f"\nThe following shows the polarity and sentiment: \n {blob.sentiment}")   # "The subjectivity is a float within the range [0.0, 1.0] where 0.0 is very objective and 1.0 is very subjective."
 
-print(sentimentAnalysis())
+print(polarity_Analysis())
+print(objectivity_analysis())
