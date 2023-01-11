@@ -3,7 +3,7 @@ from textblob import TextBlob
 # Docs for textblob can be found:
 # https://textblob.readthedocs.io/en/latest/quickstart.html#part-of-speech-tagging
 
-text = input("\nEnter a sentence to determine sentence: tags, noun phrases, polarity, and sentiment \n")
+text = input("\nEnter a sentence\n")
 
 blob = TextBlob(text)
 
