@@ -1,14 +1,9 @@
 from textblob import TextBlob
 
-# Docs for textblob can be found:
-# https://textblob.readthedocs.io/en/latest/quickstart.html#part-of-speech-tagging
-
 text = input("\nEnter a sentence\n")
 
 blob = TextBlob(text)
 
-#defines sentiment polarity. If the sentence is "positive" a positive message appears
-#if the message is negative it will inform you the message is not positive
 def polarity_Analysis():
     if (blob.sentiment[0] < .15):
         return("Negative")
