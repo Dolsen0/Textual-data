@@ -1,7 +1,7 @@
 from textblob import TextBlob
 
 text = input("\nEnter a sentence\n")
-correction = TextBlob(text)
+correction = TextBlob(text).correct()
 blob = TextBlob(text)
 
 def polarity_Analysis():
@@ -32,4 +32,5 @@ print(polarity_Analysis())
 print(objectivity_analysis())
 
 #word correction
-print(correction.correct())
+print(correction)
+print(correction.words)
