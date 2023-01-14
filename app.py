@@ -32,5 +32,7 @@ print(polarity_Analysis())
 print(objectivity_analysis())
 
 #word correction
-print(correction)
-print(correction.words)
+print(blob)
+print(blob.words)
+#print(f" potential correction: '{correction}")
+
