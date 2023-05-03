@@ -1,18 +1,19 @@
 from textblob import TextBlob
 
+
 text = input("\nEnter a sentence\n")
 correction = TextBlob(text).correct()
 blob = TextBlob(text)
 
 def polarity_Analysis():
     if (blob.sentiment[0] < .15):
-        return("Negative")
+        return("...doesn't sound great")
     elif (blob.sentiment[0] < .35):
-        return("Less positive")
+        return("...alright that sounds okay")
     elif (blob.sentiment[0] < .45):
-        return("Fairly positive")
+        return("...sounds pretty good.")
     else :
-        return("Positive!")
+        return("...sounds great!")
 
 def objectivity_analysis():
     if blob.sentiment[1] < .5:
@@ -32,6 +33,7 @@ print(polarity_Analysis())
 print(objectivity_analysis())
 
 #word correction
+print(blob.tags)
 print(blob)
 print(blob.words)
 #print(f" potential correction: '{correction}")
